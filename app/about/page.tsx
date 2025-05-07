@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Users, Award, BookOpen, Globe, CheckCircle } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Users, Award, BookOpen, Globe, CheckCircle } from "lucide-react";
 
 export default function AboutPage() {
   const fadeIn = {
@@ -13,7 +13,7 @@ export default function AboutPage() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -23,10 +23,10 @@ export default function AboutPage() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       {/* Hero Section */}
       <section className="hero-gradient min-h-[50vh] flex items-center section-padding">
         <div className="container-custom">
@@ -36,10 +36,12 @@ export default function AboutPage() {
             variants={fadeIn}
             className="max-w-3xl mx-auto text-center space-y-6"
           >
-            <h1 className="text-4xl md:text-5xl font-bold">Về HSK 365 Master</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">
+              Về HSK 365 Master
+            </h1>
             <p className="text-lg text-muted-foreground">
-              Chúng tôi là nền tảng học tiếng Trung hàng đầu, giúp hàng ngàn học viên chinh phục tiếng Trung và kỳ thi
-              HSK.
+              Chúng tôi là nền tảng học tiếng Trung hàng đầu, giúp hàng ngàn học
+              viên chinh phục tiếng Trung và kỳ thi HSK.
             </p>
           </motion.div>
         </div>
@@ -77,15 +79,20 @@ export default function AboutPage() {
               <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
                 Câu chuyện của chúng tôi
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold">Sứ mệnh giúp mọi người chinh phục tiếng Trung</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Sứ mệnh giúp mọi người chinh phục tiếng Trung
+              </h2>
               <p className="text-lg text-muted-foreground">
-                HSK 365 Master được thành lập vào năm 2020 với sứ mệnh giúp người Việt Nam học tiếng Trung một cách hiệu
-                quả và thú vị. Chúng tôi tin rằng việc học ngôn ngữ không chỉ là ghi nhớ từ vựng và ngữ pháp, mà còn là
-                hiểu biết về văn hóa và con người.
+                HSK 365 Master được thành lập vào năm 2020 với sứ mệnh giúp
+                người Việt Nam học tiếng Trung một cách hiệu quả và thú vị.
+                Chúng tôi tin rằng việc học ngôn ngữ không chỉ là ghi nhớ từ
+                vựng và ngữ pháp, mà còn là hiểu biết về văn hóa và con người.
               </p>
               <p className="text-lg text-muted-foreground">
-                Với đội ngũ giáo viên giàu kinh nghiệm và phương pháp giảng dạy hiện đại, chúng tôi đã giúp hàng ngàn
-                học viên đạt được mục tiêu học tiếng Trung của họ, từ giao tiếp cơ bản đến chinh phục kỳ thi HSK.
+                Với đội ngũ giáo viên giàu kinh nghiệm và phương pháp giảng dạy
+                hiện đại, chúng tôi đã giúp hàng ngàn học viên đạt được mục tiêu
+                học tiếng Trung của họ, từ giao tiếp cơ bản đến chinh phục kỳ
+                thi HSK.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
                 <div className="flex items-center gap-2">
@@ -116,10 +123,12 @@ export default function AboutPage() {
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Giá trị cốt lõi</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Giá trị cốt lõi
+            </h2>
             <p className="text-lg text-muted-foreground">
-              Những giá trị định hướng mọi hoạt động của chúng tôi và cam kết mang đến trải nghiệm học tập tốt nhất cho
-              học viên.
+              Những giá trị định hướng mọi hoạt động của chúng tôi và cam kết
+              mang đến trải nghiệm học tập tốt nhất cho học viên.
             </p>
           </motion.div>
 
@@ -140,7 +149,8 @@ export default function AboutPage() {
               {
                 icon: <Users className="h-10 w-10 text-primary" />,
                 title: "Cộng đồng",
-                description: "Xây dựng cộng đồng học tập hỗ trợ lẫn nhau, tạo môi trường học tập tích cực.",
+                description:
+                  "Xây dựng cộng đồng học tập hỗ trợ lẫn nhau, tạo môi trường học tập tích cực.",
               },
               {
                 icon: <Globe className="h-10 w-10 text-primary" />,
@@ -160,7 +170,9 @@ export default function AboutPage() {
                 variants={fadeIn}
                 className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border card-hover text-center"
               >
-                <div className="mx-auto mb-4 flex justify-center">{value.icon}</div>
+                <div className="mx-auto mb-4 flex justify-center">
+                  {value.icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </motion.div>
@@ -179,9 +191,12 @@ export default function AboutPage() {
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Đội ngũ của chúng tôi</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Đội ngũ của chúng tôi
+            </h2>
             <p className="text-lg text-muted-foreground">
-              Gặp gỡ những chuyên gia ngôn ngữ và giáo dục tận tâm, những người đã tạo nên HSK 365 Master.
+              Gặp gỡ những chuyên gia ngôn ngữ và giáo dục tận tâm, những người
+              đã tạo nên HSK 365 Master.
             </p>
           </motion.div>
 
@@ -224,7 +239,12 @@ export default function AboutPage() {
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border overflow-hidden card-hover"
               >
                 <div className="aspect-square relative">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
@@ -247,9 +267,12 @@ export default function AboutPage() {
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Thành tựu của chúng tôi</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Thành tựu của chúng tôi
+            </h2>
             <p className="text-lg text-muted-foreground">
-              Những con số và thành tựu đáng tự hào trong hành trình phát triển của HSK 365 Master.
+              Những con số và thành tựu đáng tự hào trong hành trình phát triển
+              của HSK 365 Master.
             </p>
           </motion.div>
 
@@ -267,22 +290,26 @@ export default function AboutPage() {
                   {
                     year: "2020",
                     title: "Thành lập HSK 365 Master",
-                    description: "Khởi đầu với 5 giáo viên và 100 học viên đầu tiên.",
+                    description:
+                      "Khởi đầu với 5 giáo viên và 100 học viên đầu tiên.",
                   },
                   {
                     year: "2021",
                     title: "Ra mắt ứng dụng di động",
-                    description: "Mở rộng nền tảng học tập với ứng dụng di động trên iOS và Android.",
+                    description:
+                      "Mở rộng nền tảng học tập với ứng dụng di động trên iOS và Android.",
                   },
                   {
                     year: "2022",
                     title: "Đạt 5,000 học viên",
-                    description: "Cộng đồng học viên phát triển mạnh mẽ trên toàn quốc.",
+                    description:
+                      "Cộng đồng học viên phát triển mạnh mẽ trên toàn quốc.",
                   },
                   {
                     year: "2023",
                     title: "Hợp tác quốc tế",
-                    description: "Ký kết hợp tác với các trường đại học tại Trung Quốc.",
+                    description:
+                      "Ký kết hợp tác với các trường đại học tại Trung Quốc.",
                   },
                 ].map((milestone, index) => (
                   <div key={index} className="flex gap-4">
@@ -293,7 +320,9 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{milestone.title}</h4>
-                      <p className="text-muted-foreground">{milestone.description}</p>
+                      <p className="text-muted-foreground">
+                        {milestone.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -331,11 +360,16 @@ export default function AboutPage() {
                     year: "2023",
                   },
                 ].map((award, index) => (
-                  <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg border">
+                  <div
+                    key={index}
+                    className="bg-white dark:bg-gray-800 p-4 rounded-lg border"
+                  >
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-semibold mb-1">{award.award}</h4>
-                        <p className="text-muted-foreground">{award.organization}</p>
+                        <p className="text-muted-foreground">
+                          {award.organization}
+                        </p>
                       </div>
                       <div className="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
                         {award.year}
@@ -360,10 +394,13 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold">Tham gia cùng chúng tôi</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Tham gia cùng chúng tôi
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Bắt đầu hành trình học tiếng Trung của bạn cùng HSK 365 Master ngay hôm nay và trở thành một phần của
-                cộng đồng học viên của chúng tôi.
+                Bắt đầu hành trình học tiếng Trung của bạn cùng HSK 365 Master
+                ngay hôm nay và trở thành một phần của cộng đồng học viên của
+                chúng tôi.
               </p>
               <Button size="lg" className="px-8">
                 Đăng ký ngay
@@ -373,5 +410,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
