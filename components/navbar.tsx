@@ -1,52 +1,55 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { motion, AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const closeMenu = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const navLinks = [
     { name: "Trang chủ", href: "/" },
     { name: "Học tập", href: "/learn" },
+    { name: "Từ vựng", href: "/vocabulary" },
     { name: "Về chúng tôi", href: "/about" },
     { name: "Blog", href: "/blog" },
-  ]
+  ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="container-custom flex items-center justify-between h-16 md:h-20">
@@ -58,7 +61,9 @@ const Navbar = () => {
             height={40}
             className="w-auto h-8 md:h-10"
           />
-          <span className="font-bold text-lg md:text-xl text-primary">HSK 365 Master</span>
+          <span className="font-bold text-lg md:text-xl text-primary">
+            HSK 365 Master
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -123,7 +128,9 @@ const Navbar = () => {
                   href={link.href}
                   onClick={closeMenu}
                   className={`text-base py-2 font-medium transition-colors hover:text-primary ${
-                    pathname === link.href ? "text-primary" : "text-foreground/80"
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground/80"
                   }`}
                 >
                   {link.name}
@@ -135,7 +142,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

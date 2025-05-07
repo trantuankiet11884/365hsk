@@ -4,15 +4,65 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Volume2, ChevronLeft, ChevronRight } from "lucide-react";
-import { vocabularyData } from "@/lib/data";
+import { useVocabularyList, useVocabularyDetail } from "@/hooks/useVocabulary";
+import type { Word } from "@/types/vocabulary";
+import { getAudioUrl } from "@/lib/api/vocabulary";
+
+// Define the shape of a vocabulary item for the component
+interface VocabularyCardItem {
+  chinese: string;
+  pinyin: string;
+  vietnamese: string;
+  audioUrl: string;
+}
 
 export default function VocabularyCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [vocabularyData, setVocabularyData] = useState<VocabularyCardItem[]>(
+    []
+  );
 
-  const playAudio = (audioUrl: string) => {
+  // Fetch vocabulary list for level 1 (daily topic)
+  const {
+    data: listData,
+    isLoading: isListLoading,
+    error: listError,
+  } = useVocabularyList({
+    level: 1, // Hardcoded to level 1 for "daily" topic
+    page: 1,
+    pageSize: 1, // Fetch only one VocabularyItem
+  });
+
+  // Fetch vocabulary detail for the first item's _id
+  const firstItemId = listData?.data?.[0]?._id || null;
+  const {
+    data: detailData,
+    isLoading: isDetailLoading,
+    error: detailError,
+  } = useVocabularyDetail(firstItemId);
+
+  // Process API data into the component's expected format
+  useEffect(() => {
+    if (detailData && detailData.success) {
+      const formattedData: VocabularyCardItem[] = detailData.data.words.map(
+        (word: Word) => ({
+          chinese: word.text,
+          pinyin: word.pinyin,
+          vietnamese: word.trans.text,
+          audioUrl: word.audio,
+        })
+      );
+      setVocabularyData(formattedData);
+    }
+  }, [detailData]);
+
+  const playAudio = (audioPath: string) => {
     if (audioRef.current) {
+      const audioUrl = getAudioUrl(audioPath);
+      if (!audioUrl) return;
+
       audioRef.current.src = audioUrl;
       audioRef.current.play().catch((error) => {
         console.error("Error playing audio:", error);
@@ -43,6 +93,31 @@ export default function VocabularyCard() {
 
     return () => clearInterval(interval);
   }, [currentIndex]);
+
+  // Render loading state
+  if (isListLoading || isDetailLoading || vocabularyData.length === 0) {
+    return (
+      <section className="section-padding bg-gray-50 dark:bg-gray-900">
+        <div className="container-custom text-center py-12">
+          <p className="text-muted-foreground">Đang tải dữ liệu...</p>
+        </div>
+      </section>
+    );
+  }
+
+  // Render error state
+  if (listError || detailError) {
+    return (
+      <section className="section-padding bg-gray-50 dark:bg-gray-900">
+        <div className="container-custom text-center py-12">
+          <p className="text-red-500">
+            Có lỗi xảy ra khi tải dữ liệu:{" "}
+            {listError?.message || detailError?.message}
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="section-padding bg-gray-50 dark:bg-gray-900">
@@ -142,7 +217,7 @@ export default function VocabularyCard() {
           </div>
 
           <audio ref={audioRef} className="hidden">
-            <source src="" type="audio/mpeg" />
+            <source src={undefined} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>
