@@ -15,7 +15,7 @@ HSK 365 Master là nền tảng học tiếng Trung toàn diện, giúp người
 
 ## 🛠️ Công nghệ sử dụng
 
-- **Frontend**: Next.js 14, React, TypeScript
+- **Frontend**: Next.js 15, React, TypeScript
 - **Styling**: Tailwind CSS, Shadcn UI
 - **Animation**: Framer Motion
 - **State Management**: React Hooks
