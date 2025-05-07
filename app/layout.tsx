@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
+            <ScrollToTopButton />
           </div>
         </ThemeProvider>
       </body>
