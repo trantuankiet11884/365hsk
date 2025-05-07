@@ -5,6 +5,11 @@ import {
   Lightbulb,
   Users,
   Volume2,
+  Headphones,
+  MessageSquare,
+  BarChart,
+  Zap,
+  PenTool,
 } from "lucide-react";
 
 export const vocabularyData = [
@@ -217,5 +222,218 @@ export const dailyExercises = [
     duration: "10 phút",
     difficulty: "Cơ bản",
     type: "Nói",
+  },
+];
+
+export const features = [
+  {
+    icon: <BookOpen className="h-10 w-10 text-primary" />,
+    title: "Học từ vựng hiệu quả",
+    description:
+      "Phương pháp học từ vựng khoa học giúp ghi nhớ lâu và hiệu quả.",
+  },
+  {
+    icon: <Headphones className="h-10 w-10 text-primary" />,
+    title: "Luyện phát âm chuẩn",
+    description:
+      "Công nghệ nhận diện giọng nói giúp bạn phát âm chuẩn như người bản xứ.",
+  },
+  {
+    icon: <MessageSquare className="h-10 w-10 text-primary" />,
+    title: "Luyện giao tiếp thực tế",
+    description:
+      "Các bài học giao tiếp thực tế giúp bạn tự tin trong mọi tình huống.",
+  },
+  {
+    icon: <BarChart className="h-10 w-10 text-primary" />,
+    title: "Theo dõi tiến độ",
+    description:
+      "Hệ thống theo dõi tiến độ chi tiết giúp bạn nắm rõ quá trình học tập.",
+  },
+];
+
+export const stats = [
+  { value: "10,000+", label: "Học viên" },
+  { value: "5,000+", label: "Từ vựng" },
+  { value: "500+", label: "Bài học" },
+  { value: "98%", label: "Tỷ lệ đỗ HSK" },
+];
+
+export const hskLevels = [
+  {
+    level: "HSK 1",
+    words: "150",
+    description:
+      "Dành cho người mới bắt đầu, có thể hiểu và sử dụng các từ và cụm từ cơ bản.",
+    topics: ["Chào hỏi", "Giới thiệu bản thân", "Số đếm", "Thời gian"],
+  },
+  {
+    level: "HSK 2",
+    words: "300",
+    description:
+      "Có thể giao tiếp đơn giản và trực tiếp về các chủ đề quen thuộc hàng ngày.",
+    topics: ["Mua sắm", "Ăn uống", "Hỏi đường", "Thời tiết"],
+  },
+  {
+    level: "HSK 3",
+    words: "600",
+    description:
+      "Có thể giao tiếp cơ bản trong công việc, học tập và cuộc sống hàng ngày.",
+    topics: ["Du lịch", "Công việc", "Học tập", "Sở thích"],
+  },
+  {
+    level: "HSK 4",
+    words: "1200",
+    description:
+      "Có thể giao tiếp trôi chảy với người bản xứ về nhiều chủ đề khác nhau.",
+    topics: ["Văn hóa", "Lịch sử", "Kinh tế", "Xã hội"],
+  },
+  {
+    level: "HSK 5",
+    words: "2500",
+    description: "Có thể đọc báo chí, xem phim và hiểu các bài phát biểu dài.",
+    topics: ["Văn học", "Thời sự", "Khoa học", "Nghệ thuật"],
+  },
+  {
+    level: "HSK 6",
+    words: "5000+",
+    description:
+      "Có thể hiểu mọi thứ nghe và đọc bằng tiếng Trung, gần như người bản xứ.",
+    topics: [
+      "Triết học",
+      "Chính trị",
+      "Kinh tế quốc tế",
+      "Nghiên cứu học thuật",
+    ],
+  },
+];
+
+export const learningMethods = [
+  {
+    icon: <Zap className="h-10 w-10 text-primary" />,
+    title: "Phương pháp lặp lại ngắt quãng",
+    description:
+      "Ôn tập từ vựng theo các khoảng thời gian tối ưu, giúp ghi nhớ lâu dài và hiệu quả.",
+  },
+  {
+    icon: <PenTool className="h-10 w-10 text-primary" />,
+    title: "Phương pháp viết tay",
+    description:
+      "Luyện viết chữ Hán bằng tay giúp ghi nhớ tốt hơn và hiểu sâu về cấu trúc chữ.",
+  },
+  {
+    icon: <Volume2 className="h-10 w-10 text-primary" />,
+    title: "Phương pháp nghe - nhắc lại",
+    description:
+      "Nghe và nhắc lại nhiều lần giúp cải thiện phát âm và khả năng nghe hiểu.",
+  },
+  {
+    icon: <Brain className="h-10 w-10 text-primary" />,
+    title: "Phương pháp liên tưởng",
+    description:
+      "Liên kết từ vựng mới với hình ảnh hoặc câu chuyện giúp ghi nhớ dễ dàng hơn.",
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Nguyễn Văn A",
+    role: "Sinh viên Đại học Ngoại ngữ",
+    content:
+      "HSK 365 Master đã giúp tôi vượt qua kỳ thi HSK 5 với số điểm 240/300. Phương pháp học rất hiệu quả và dễ tiếp cận. Tôi đặc biệt thích tính năng luyện phát âm và thẻ ghi nhớ thông minh.",
+    image: "/placeholder.svg?height=100&width=100",
+    rating: 5,
+  },
+  {
+    name: "Trần Thị B",
+    role: "Nhân viên công ty thương mại Trung Quốc",
+    content:
+      "Tôi đã học tiếng Trung được 6 tháng với HSK 365 Master và giờ đây tôi có thể tự tin giao tiếp với đối tác Trung Quốc. Các bài học giao tiếp thực tế rất hữu ích cho công việc của tôi.",
+    image: "/placeholder.svg?height=100&width=100",
+    rating: 5,
+  },
+  {
+    name: "Lê Văn C",
+    role: "Doanh nhân",
+    content:
+      "Ứng dụng rất tiện lợi, tôi có thể học mọi lúc mọi nơi. Các bài học thực tế giúp tôi áp dụng ngay vào công việc kinh doanh. Sau 1 năm học, tôi đã có thể đàm phán trực tiếp với đối tác Trung Quốc.",
+    image: "/placeholder.svg?height=100&width=100",
+    rating: 4,
+  },
+  {
+    name: "Phạm Thị D",
+    role: "Giáo viên tiếng Anh",
+    content:
+      "Tôi đã thử nhiều ứng dụng học tiếng Trung nhưng HSK 365 Master là ứng dụng tốt nhất. Phương pháp học từ vựng rất hiệu quả và các bài tập ngữ pháp giúp tôi hiểu sâu về cấu trúc câu tiếng Trung.",
+    image: "/placeholder.svg?height=100&width=100",
+    rating: 5,
+  },
+];
+
+export const faqs = [
+  {
+    question: "HSK 365 Master có phù hợp với người mới bắt đầu không?",
+    answer:
+      "Có, HSK 365 Master được thiết kế cho mọi trình độ, từ người mới bắt đầu đến người học nâng cao. Chúng tôi có các khóa học từ HSK 1 đến HSK 6, phù hợp với mọi nhu cầu học tập.",
+  },
+  {
+    question: "Tôi cần học bao lâu để đạt trình độ giao tiếp cơ bản?",
+    answer:
+      "Với việc học đều đặn 30-60 phút mỗi ngày, hầu hết học viên có thể đạt trình độ giao tiếp cơ bản (tương đương HSK 2-3) trong khoảng 6-9 tháng.",
+  },
+  {
+    question: "HSK 365 Master có hỗ trợ học offline không?",
+    answer:
+      "Có, ứng dụng HSK 365 Master cho phép bạn tải bài học về máy để học offline. Bạn có thể học mọi lúc, mọi nơi mà không cần kết nối internet.",
+  },
+  {
+    question: "Làm thế nào để cải thiện phát âm tiếng Trung?",
+    answer:
+      "HSK 365 Master cung cấp công cụ nhận diện giọng nói giúp bạn luyện phát âm. Bạn có thể nghe phát âm chuẩn, sau đó luyện nói và nhận phản hồi ngay lập tức về độ chính xác của phát âm.",
+  },
+  {
+    question: "Tôi có thể học tiếng Trung mà không cần học chữ Hán không?",
+    answer:
+      "Mặc dù chúng tôi khuyến khích học chữ Hán để hiểu sâu về ngôn ngữ và văn hóa Trung Quốc, HSK 365 Master cũng cung cấp tùy chọn học với phiên âm pinyin cho những người muốn tập trung vào giao tiếp trước.",
+  },
+  {
+    question:
+      "HSK 365 Master có cung cấp chứng chỉ sau khi hoàn thành khóa học không?",
+    answer:
+      "HSK 365 Master cung cấp chứng chỉ hoàn thành khóa học nội bộ. Tuy nhiên, để có chứng chỉ HSK chính thức, bạn cần tham gia kỳ thi HSK do Hanban tổ chức. Chúng tôi có các khóa học luyện thi HSK để giúp bạn chuẩn bị cho kỳ thi này.",
+  },
+];
+
+export const comparisons = [
+  {
+    feature: "Phương pháp học",
+    hsk365:
+      "Phương pháp lặp lại ngắt quãng, học theo chủ đề, luyện tập tương tác",
+    traditional: "Học thuộc lòng, luyện tập lặp đi lặp lại",
+  },
+  {
+    feature: "Thời gian học",
+    hsk365: "Linh hoạt, học mọi lúc mọi nơi, 15-30 phút mỗi ngày",
+    traditional: "Cố định, thường 1-2 giờ mỗi buổi học",
+  },
+  {
+    feature: "Tài liệu học tập",
+    hsk365: "Đa dạng: video, audio, thẻ ghi nhớ, bài tập tương tác",
+    traditional: "Chủ yếu là sách giáo trình và bài tập viết",
+  },
+  {
+    feature: "Theo dõi tiến độ",
+    hsk365: "Hệ thống theo dõi chi tiết, phân tích điểm mạnh, điểm yếu",
+    traditional: "Thường không có hệ thống theo dõi chi tiết",
+  },
+  {
+    feature: "Hỗ trợ",
+    hsk365: "Hỗ trợ 24/7 qua ứng dụng, cộng đồng học viên",
+    traditional: "Chỉ hỗ trợ trong giờ học",
+  },
+  {
+    feature: "Chi phí",
+    hsk365: "Tiết kiệm hơn, trả phí theo gói dịch vụ",
+    traditional: "Thường cao hơn, trả phí theo buổi học",
   },
 ];
