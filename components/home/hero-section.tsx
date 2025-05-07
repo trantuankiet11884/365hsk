@@ -15,8 +15,57 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="hero-gradient min-h-[90vh] flex items-center section-padding overflow-hidden">
-      <div className="container-custom">
+    <section className="hero-gradient min-h-[90vh] flex items-center section-padding overflow-hidden relative">
+      {/* Custom SVG background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 opacity-20">
+        <Image
+          src="/svg/chinese-pattern.svg"
+          alt="Chinese Pattern"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Floating decorative elements */}
+      <div className="absolute top-[20%] left-[10%] animate-float-slow opacity-30 z-0">
+        <svg
+          width="60"
+          height="60"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path
+            d="M9 9H15M9 12H15M9 15H15"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+      <div className="absolute bottom-[15%] right-[15%] animate-float opacity-30 z-0">
+        <svg
+          width="80"
+          height="80"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 9h18M3 15h18M12 3v18"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial="hidden"
@@ -76,12 +125,14 @@ export default function HeroSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
               <Image
-                src="/placeholder.svg?height=500&width=500"
+                src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?q=80&w=2070&auto=format&fit=crop"
                 alt="Student learning Chinese"
                 width={500}
                 height={500}
-                className="relative z-10 animate-float"
+                className="relative z-10 animate-float rounded-3xl object-cover"
               />
+
+              {/* Floating achievement cards */}
               <div className="absolute top-5 -right-10 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg z-20 animate-float">
                 <div className="flex items-center gap-2">
                   <Award className="h-6 w-6 text-primary" />
@@ -96,6 +147,55 @@ export default function HeroSection() {
                   <CheckCircle className="h-6 w-6 text-green-500" />
                   <span className="font-medium">2000+ từ vựng</span>
                 </div>
+              </div>
+
+              {/* Additional floating elements */}
+              <div
+                className="absolute top-40 -left-14 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg z-20 animate-pulse"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 3v7M12 14v.01"
+                    stroke="#FF4A4A"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M8 8l8 8M16 8l-8 8"
+                    stroke="#FF4A4A"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                className="absolute -bottom-4 right-10 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg z-20 animate-pulse"
+                style={{ animationDelay: "0.7s" }}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="#4BC3FF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
             </div>
           </motion.div>

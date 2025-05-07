@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="vocab-card-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <text x="10" y="30" font-size="18" fill="currentColor" opacity="0.1">字</text>
+      <text x="40" y="60" font-size="18" fill="currentColor" opacity="0.1">词</text>
+      <text x="60" y="20" font-size="18" fill="currentColor" opacity="0.1">语</text>
+      <text x="30" y="80" font-size="18" fill="currentColor" opacity="0.1">言</text>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#vocab-card-pattern)"/>
+</svg> 

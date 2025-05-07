@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="chinese-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <text x="10" y="30" fill="currentColor" font-size="14">你好</text>
+      <text x="40" y="60" fill="currentColor" font-size="14">学习</text>
+      <text x="70" y="90" fill="currentColor" font-size="14">中文</text>
+      <text x="20" y="80" fill="currentColor" font-size="14">汉字</text>
+      <text x="50" y="20" fill="currentColor" font-size="14">语言</text>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#chinese-pattern)" />
+</svg> 

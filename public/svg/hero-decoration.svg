@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chinese-inspired decorative elements -->
+  <rect x="50" y="50" width="200" height="200" rx="20" stroke="currentColor" stroke-width="4" fill="none" opacity="0.1"/>
+  <rect x="550" y="350" width="200" height="200" rx="20" stroke="currentColor" stroke-width="4" fill="none" opacity="0.1"/>
+  
+  <!-- Abstract brush strokes -->
+  <path d="M100,300 C200,250 300,350 400,300 S600,250 700,300" 
+    stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.1"/>
+  <path d="M100,320 C200,270 300,370 400,320 S600,270 700,320" 
+    stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.07"/>
+  
+  <!-- Chinese characters as decorative elements -->
+  <text x="125" y="140" font-size="70" fill="currentColor" opacity="0.1">学</text>
+  <text x="625" y="440" font-size="70" fill="currentColor" opacity="0.1">习</text>
+  <text x="400" y="200" font-size="90" fill="currentColor" opacity="0.05">中</text>
+  <text x="400" y="400" font-size="90" fill="currentColor" opacity="0.05">文</text>
+</svg> 

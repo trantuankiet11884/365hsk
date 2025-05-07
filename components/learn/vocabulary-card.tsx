@@ -3,10 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Volume2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Volume2, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 import { useVocabularyList, useVocabularyDetail } from "@/hooks/useVocabulary";
 import type { Word } from "@/types/vocabulary";
 import { getAudioUrl } from "@/lib/api/vocabulary";
+import Image from "next/image";
 
 // Define the shape of a vocabulary item for the component
 interface VocabularyCardItem {
@@ -120,8 +121,26 @@ export default function VocabularyCard() {
   }
 
   return (
-    <section className="section-padding bg-gray-50 dark:bg-gray-900">
-      <div className="container-custom">
+    <section className="section-padding bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <Image
+          src="/svg/vocabulary-card-bg.svg"
+          alt=""
+          fill
+          className="object-cover text-primary"
+        />
+      </div>
+
+      {/* Floating Chinese characters */}
+      <div className="absolute top-20 left-[10%] text-8xl font-bold text-primary/5 animate-float-slow">
+        词
+      </div>
+      <div className="absolute bottom-20 right-[10%] text-8xl font-bold text-primary/5 animate-float">
+        汇
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,6 +148,11 @@ export default function VocabularyCard() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <BookOpen className="h-8 w-8 text-primary" />
+            </div>
+          </div>
           <h2 className="text-3xl font-bold mb-4">Thẻ từ vựng</h2>
           <p className="text-muted-foreground">
             Luyện tập từ vựng tiếng Trung với thẻ học tương tác. Nghe phát âm và
@@ -145,10 +169,14 @@ export default function VocabularyCard() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border"
+                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border relative overflow-hidden"
               >
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-sm text-muted-foreground">
+                {/* Card background decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-x-1/3 -translate-y-1/3 blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full translate-x-1/3 translate-y-1/3 blur-2xl"></div>
+
+                <div className="flex justify-between items-center mb-6 relative z-10">
+                  <span className="text-sm text-muted-foreground bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full">
                     {currentIndex + 1} / {vocabularyData.length}
                   </span>
                   <Button
@@ -163,7 +191,7 @@ export default function VocabularyCard() {
                     <span className="sr-only">Play pronunciation</span>
                   </Button>
                 </div>
-                <div className="space-y-6 text-center">
+                <div className="space-y-6 text-center relative z-10">
                   <div>
                     <h3 className="text-4xl md:text-5xl font-bold mb-2">
                       {vocabularyData[currentIndex].chinese}
@@ -172,7 +200,12 @@ export default function VocabularyCard() {
                       {vocabularyData[currentIndex].pinyin}
                     </p>
                   </div>
-                  <div className="h-px bg-gray-200 dark:bg-gray-700 w-full"></div>
+                  <motion.div
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.5 }}
+                    className="h-px bg-gray-200 dark:bg-gray-700 w-full"
+                  ></motion.div>
                   <p className="text-2xl">
                     {vocabularyData[currentIndex].vietnamese}
                   </p>
